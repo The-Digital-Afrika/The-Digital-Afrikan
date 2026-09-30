@@ -729,6 +729,71 @@ h3 {
     background-size: cover;
 }
 
+.page-hero-booking {
+    min-height: 42vh;
+    padding-bottom: 54px;
+    background:
+        radial-gradient(circle at 76% 24%, rgba(111, 16, 41, 0.58), transparent 30%),
+        linear-gradient(135deg, #000000 0%, #0b0a0b 58%, #260711 100%);
+}
+
+.booking-section {
+    padding: clamp(44px, 7vw, 82px) 0;
+    background: var(--surface-soft);
+}
+
+.booking-frame-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--paper);
+    box-shadow: var(--shadow-soft);
+}
+
+.booking-frame {
+    display: block;
+    width: 100%;
+    min-height: 720px;
+    border: 0;
+    background: var(--paper);
+}
+
+.booking-placeholder {
+    display: grid;
+    place-items: center;
+    min-height: 360px;
+    padding: 40px 24px;
+    text-align: center;
+}
+
+.booking-placeholder-inner {
+    max-width: 520px;
+}
+
+.booking-placeholder i {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 20px;
+    color: #ffffff;
+    border-radius: 50%;
+    background: var(--accent);
+    font-size: 1.25rem;
+}
+
+.booking-placeholder h2 {
+    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.55rem, 3vw, 2.2rem);
+}
+
+.booking-placeholder p {
+    color: var(--muted);
+}
+
 .page-hero .section-heading {
     max-width: 860px;
     margin: 0 auto;

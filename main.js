@@ -2,6 +2,7 @@ const body = document.body;
 const header = document.getElementById("siteHeader");
 const toggle = document.getElementById("mobileToggle");
 const navLinks = document.querySelectorAll(".nav-link");
+const studioBookingLinks = document.querySelectorAll('a.nav-cta[href="book-session.html"]');
 const dropdownItems = document.querySelectorAll(".has-dropdown");
 const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 const revealItems = document.querySelectorAll(".reveal");
@@ -16,8 +17,27 @@ const detailModal = document.getElementById("detailModal");
 const detailModalPanel = detailModal?.querySelector(".team-modal-panel");
 const detailModalClose = detailModal?.querySelector(".modal-close");
 const detailModalTriggers = document.querySelectorAll(".detail-modal-trigger");
+const ameliaBooking = document.getElementById("ameliaBooking");
 let lastFocusedTeamCard = null;
 let lastFocusedDetailCard = null;
+
+studioBookingLinks.forEach((link) => {
+    link.textContent = "Studio Booking";
+});
+
+if (ameliaBooking) {
+    const bookingUrl = ameliaBooking.dataset.bookingUrl?.trim();
+
+    if (bookingUrl) {
+        const bookingFrame = document.createElement("iframe");
+        bookingFrame.className = "booking-frame";
+        bookingFrame.src = bookingUrl;
+        bookingFrame.title = "Book a session with The Digital Afrikan";
+        bookingFrame.loading = "lazy";
+        bookingFrame.setAttribute("allow", "payment");
+        ameliaBooking.replaceChildren(bookingFrame);
+    }
+}
 
 const closeMenu = () => {
     body.classList.remove("nav-open");
