@@ -730,11 +730,75 @@ h3 {
 }
 
 .page-hero-booking {
+    position: relative;
+    isolation: isolate;
     min-height: 42vh;
     padding-bottom: 54px;
     background:
         radial-gradient(circle at 76% 24%, rgba(111, 16, 41, 0.58), transparent 30%),
         linear-gradient(135deg, #000000 0%, #0b0a0b 58%, #260711 100%);
+}
+
+.booking-soundwave {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--accent-bright);
+    opacity: 0.48;
+    pointer-events: none;
+    z-index: -1;
+    mask-image: linear-gradient(90deg, #000, transparent 36%, transparent 64%, #000);
+}
+
+.page-hero-booking::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-bright), transparent);
+}
+
+.page-hero-booking .section-heading .eyebrow {
+    color: #ffffff;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    gap: 10px;
+}
+
+.booking-record-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--accent-bright);
+    box-shadow: 0 0 0 5px rgba(111, 16, 41, 0.22);
+}
+
+.page-hero-booking h1 {
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    line-height: 1.12;
+    margin: 18px 0;
+    text-wrap: balance;
+}
+
+.page-hero-booking .page-description {
+    max-width: 620px;
+    margin-inline: auto;
+    text-wrap: balance;
+}
+
+@media (max-width: 600px) {
+    .booking-soundwave {
+        opacity: 0.28;
+    }
+
+    .page-hero-booking .section-heading .eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+    }
 }
 
 .booking-section {
